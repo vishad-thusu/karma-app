@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>KARMA — Gamified Personal OS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/auth.css">
+  <link rel="stylesheet" href="css/pages/dashboard.css">
+  <link rel="stylesheet" href="css/pages/daily.css">
+  <link rel="stylesheet" href="css/pages/habits.css">
+  <link rel="stylesheet" href="css/pages/workout.css">
+  <link rel="stylesheet" href="css/pages/todos.css">
+  <link rel="stylesheet" href="css/pages/nutrition.css">
+  <link rel="stylesheet" href="css/pages/progress.css">
+  <link rel="stylesheet" href="css/pages/expenses.css">
+  <link rel="stylesheet" href="css/pages/journal.css">
+</head>
+<body>
+</head>
+<body>
+<div class="screen active" id="scr-auth"><div class="auth-wrap"><div class="auth-bg"></div><div class="auth-card" id="auth-card"></div></div></div>
+<div class="screen" id="scr-onboard"><div class="auth-wrap"><div class="auth-bg"></div><div class="auth-card" id="onb-card"></div></div></div>
+<div class="screen" id="scr-analysis"><div class="auth-wrap"><div class="auth-bg"></div><div class="analysis-screen" id="analysis-c"></div></div></div>
+<div class="screen" id="scr-app">
+  <div class="app-l">
+    <aside class="sidebar" id="sidebar">
+      <div class="sb-top">
+        <div class="sb-logo-row" onclick="goTo('dashboard')"><div class="sb-k">K</div><div class="sb-brand">KARMA</div></div>
+        <div class="sb-profile-mini" onclick="goTo('dashboard')">
+          <div class="sb-profile-top">
+            <div class="sb-av" id="sb-av"></div>
+            <div><div class="sb-name" id="sb-name">—</div><div class="sb-sub" id="sb-sub">—</div></div>
+          </div>
+          <div class="sb-stat-inline" id="sb-stat-inline"></div>
+        </div>
+      </div>
+      <div class="sb-scroll">
+        <div class="sb-sec">Navigate</div>
+        <div class="nav-i" data-p="daily" onclick="goTo('daily')"><span class="nav-ico">☀️</span>Today<span class="nav-badge" id="nb-d">0</span></div>
+        <div class="nav-i" data-p="habits" onclick="goTo('habits')"><span class="nav-ico">💪</span>Habits<span class="nav-badge" id="nb-h">0</span></div>
+        <div class="nav-i" data-p="workout" onclick="goTo('workout')"><span class="nav-ico">🏋️</span>Workout</div>
+        <div class="nav-i" data-p="todos" onclick="goTo('todos')"><span class="nav-ico">✅</span>To-Do</div>
+        <div class="nav-i" data-p="meals" onclick="goTo('meals')"><span class="nav-ico">🥗</span>Nutrition</div>
+        <div class="nav-i" data-p="progress" onclick="goTo('progress')"><span class="nav-ico">📈</span>Progress</div>
+        <div class="nav-i" data-p="expenses" onclick="goTo('expenses')"><span class="nav-ico">💰</span>Expenses</div>
+        <div class="nav-i" data-p="journal" onclick="goTo('journal')"><span class="nav-ico">📝</span>Journal</div>
+      </div>
+      <div class="sb-foot">
+        <button class="sb-foot-btn" onclick="exportData()">⬇ Export</button>
+        <button class="sb-foot-btn" onclick="toggleTheme()">◐ Theme</button>
+        <button class="sb-foot-btn" onclick="logout()" style="color:var(--str)">↩ Logout</button>
+      </div>
+    </aside>
+    <main class="main-a">
+      <div class="page" id="page-dashboard"></div>
+      <div class="page" id="page-habits"></div>
+      <div class="page" id="page-workout"></div>
+      <div class="page" id="page-daily"></div>
+      <div class="page" id="page-todos"></div>
+      <div class="page" id="page-meals"></div>
+      <div class="page" id="page-progress"></div>
+      <div class="page" id="page-expenses"></div>
+      <div class="page" id="page-journal"></div>
+      <div class="page" id="page-stat-str"></div>
+      <div class="page" id="page-stat-con"></div>
+      <div class="page" id="page-stat-int"></div>
+      <div class="page" id="page-stat-per"></div>
+    </main>
+  </div>
+</div>
+<div class="modal-overlay" id="recipe-modal"><div class="modal-box" style="position:relative"><button class="modal-close" onclick="closeRecipeModal()">✕</button><div class="modal-t">Create Recipe</div><div class="modal-s">All fields required</div><div id="recipe-form"></div></div></div>
+<!-- Habit Time Prompt -->
+<div class="ht-prompt" id="ht-prompt" style="display:none">
+  <div class="ht-prompt-title" id="htp-title">When did you do this?</div>
+  <div class="ht-prompt-sub" id="htp-sub">—</div>
+  <div class="ht-time-grid" id="htp-grid"></div>
+  <div class="ht-prompt-row">
+    <button class="ht-prompt-cancel" onclick="closeHabPrompt()">Cancel</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/gh/nicholasgasior/gzipped-base64@master/dist/gzipped-base64.min.js" onerror="true"></script>
+
+  <script src="js/config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/xp.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/aria.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/pages/auth.js"></script>
+  <script src="js/pages/dashboard.js"></script>
+  <script src="js/pages/daily.js"></script>
+  <script src="js/pages/habits.js"></script>
+  <script src="js/pages/workout.js"></script>
+  <script src="js/pages/todos.js"></script>
+  <script src="js/pages/nutrition.js"></script>
+  <script src="js/pages/progress.js"></script>
+  <script src="js/pages/expenses.js"></script>
+  <script src="js/pages/journal.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

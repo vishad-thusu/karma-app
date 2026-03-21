@@ -1,0 +1,19 @@
+/* KARMA — Design Tokens */
+:root{
+  --bg:#0a0b0c;--s1:#0e111b;--s2:#171717;--s3:#1c1c1c;--s4:#262626;--s5:#333;--s6:#444;
+  --bd:rgba(255,255,255,.05);--bd2:rgba(255,255,255,.09);--bd3:rgba(255,255,255,.16);
+  --text:#fafafa;--t2:#a1a1a1;--t3:#666;--t4:#444;
+  --str:#b05d41;--strbg:rgba(176,93,65,.08);--con:#5ab89a;--conbg:rgba(90,184,154,.08);
+  --int:#8a7ed4;--intbg:rgba(138,126,212,.08);--per:#f59768;--perbg:rgba(245,151,104,.08);
+  --gold:#f59768;--goldbg:rgba(245,151,104,.06);
+  --primary:#b05d41;--primary2:#f59768;
+  --ease:cubic-bezier(.16,1,.3,1);--sb:252px;
+  --font:'Inter Tight',system-ui,-apple-system,sans-serif;
+  --mono:'SF Mono',SFMono-Regular,ui-monospace,Menlo,monospace;
+  --radius:1rem;
+}
+html.light{
+  --bg:#f6f5f8;--s1:#ffffff;--s2:#f0eff3;--s3:#e6e5ea;--s4:#dbdae0;--s5:#cccbd3;--s6:#b5b4be;
+  --bd:rgba(0,0,0,.06);--bd2:rgba(0,0,0,.1);--bd3:rgba(0,0,0,.18);
+  --text:#1a1a22;--t2:#5a5868;--t3:#888696;--t4:#b5b3c2;
+}

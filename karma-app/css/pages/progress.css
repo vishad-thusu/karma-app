@@ -1,0 +1,40 @@
+/* KARMA — PAGES / PROGRESS */
+.prog-layout{display:grid;grid-template-columns:1fr 280px;gap:14px;align-items:start}
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chart-card{background:var(--s2);border:1px solid rgba(255,255,255,.04);border-radius:var(--radius);padding:14px;overflow:hidden}
+.chart-card canvas{max-width:100%}
+.chart-title{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--t4);margin-bottom:8px}
+.aria-panel{background:linear-gradient(135deg,rgba(138,126,212,.06),rgba(176,93,65,.04));border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:18px;position:sticky;top:16px}
+.aria-t{font-size:14px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}.aria-sub{font-size:10px;color:var(--t2);margin-bottom:12px}
+.aria-out{font-size:12px;line-height:1.7;color:var(--t2);white-space:pre-line}
+/* Heatmap */
+.hm-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}.hm-cell{aspect-ratio:1;border-radius:2px;background:rgba(255,255,255,.03)}
+
+/* ═══════ EXPENSES ═══════ */
+.stat-detail-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);border-radius:var(--radius)}
+.sdh-num{font-family:var(--mono);font-size:42px;font-weight:700;line-height:1}.sdh-info{flex:1}
+.sdh-name{font-size:16px;font-weight:600;margin-bottom:2px;letter-spacing:-.02em}.sdh-desc{font-size:10px;color:var(--t2);line-height:1.5}
+.sdh-bar{height:4px;background:var(--s4);border-radius:2px;overflow:hidden;margin-top:8px}.sdh-fill{height:100%;border-radius:2px;transition:width .5s var(--ease)}
+.sd-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sd-sec{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);border-radius:var(--radius);padding:14px}
+.sd-sec-t{font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--t4);margin-bottom:8px}
+.sd-item{display:flex;align-items:center;gap:8px;padding:6px 8px;background:var(--s3);border:1px solid rgba(255,255,255,.04);border-radius:8px;margin-bottom:3px;font-size:11px}
+.sd-item-ico{font-size:13px}.sd-item-info{flex:1}.sd-item-name{font-weight:500;letter-spacing:-.01em}.sd-item-meta{font-size:8px;color:var(--t3);font-family:var(--mono)}
+
+/* ═══════ ANIMATIONS ═══════ */
+.prog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.pc{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);border-radius:var(--radius);padding:12px}
+.pc-l{font-size:8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--t4);margin-bottom:4px}
+.pc-v{font-family:var(--mono);font-size:22px;font-weight:700;line-height:1;margin-bottom:2px}
+.pc-s{font-size:9px;color:var(--t3)}
+.chart-box{background:var(--s2);border:1px solid rgba(255,255,255,.04);border-radius:var(--radius);padding:14px;overflow:hidden}
+.chart-box canvas{max-width:100%;height:auto!important}
+.chart-t{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--t4);margin-bottom:8px}
+.hm-days{display:grid;grid-template-columns:14px 1fr;gap:4px;align-items:center}
+.hm-day{font-size:8px;color:var(--t4);font-family:var(--mono)}
+
+/* ═══════ EXPENSES PAGE — MISSING CLASSES ═══════ */
+.ai-btn{width:100%;padding:8px 14px;background:transparent;border:1px solid rgba(138,126,212,.25);border-radius:9999px;color:var(--int);font-size:11px;font-weight:600;cursor:pointer;transition:.15s;font-family:var(--font)}.ai-btn:hover{background:rgba(138,126,212,.06);border-color:rgba(138,126,212,.4)}
+.ai-empty{text-align:center;padding:20px;color:var(--t3);font-size:12px}
+.expanded .exp-cat-expand{display:block}
+.dot{width:4px;height:4px;border-radius:50%;display:inline-block}
